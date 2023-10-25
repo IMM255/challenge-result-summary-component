@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+$text: "Hanken Grotesk";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+    display: none;
+}
+body {
+	line-height: 1;
+}
+menu, ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+    font-size: 62.5%;
+    font-family: $text;
+    background-color: #f4f2f2;
+}
+
+// .attribution{
+//     position: relative;
+//     top: 700px;
+// }
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    display: flex;
+    .result{
+        background: linear-gradient(180deg, rgba(80,16,223,1) 0%, rgba(64,24,153,1) 77%, rgba(80,16,223,1) 100%);
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        color: #ffffff;
+        border: solid 1px transparent;
+        border-radius: 1rem;
+        h3{
+            color: rgba($color: #fff, $alpha: 0.7);
+            font-size: 0.7rem;
+            padding-top: 25px ;
+        }
+        .circle{
+            text-align: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            margin: 25px auto;
+            background: linear-gradient(180deg, rgba(51,23,186,1) 40%, rgba(121,61,255,1) 100%);            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            .number{
+                font-size: 1.5rem;
+            }
+            .small-number{
+                font-size: 0.6rem;
+                color: rgba(255, 255, 255,0.5);
+            }
+        }
+        .result-text{
+            margin: 0 auto;
+            width: 115px;
+            padding-bottom: 30px;
+            h2{
+                font-size: 1rem;
+                padding-bottom: 10px;
+            }
+            p{
+                color: rgba($color: #fff, $alpha: 0.7);
+                line-height: 12px;
+                font-size: 0.5rem;
+            }
+        }
+    }
+    .summary{
+        width: 50%;
+        background-color: #ffffff;
+        padding: 20px 20px;
+        display: flex;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        flex-direction: column;
+        box-shadow: 10px 10px 48px -4px rgba(23,60,147,0.2);
+        gap: 10px;
+        h2{
+            font-size: 0.8rem;
+        }
+        .box{
+            padding: 0 8px;
+            height: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:rgba(255, 0, 0, 0.1);
+            border-radius: 5px;
+
+            .summary-text{
+                display: flex;
+                align-items: center;
+                gap: 3px;
+
+                img{
+                    width: 15px;
+                }
+            }
+
+            .summary-value span{
+                color: rgba($color: #000000, $alpha: 0.6);
+            }
+
+        }
+
+        button{
+            margin-top: 10px;
+            border:none;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            padding: 8px;
+            background-color: rgb(50, 48, 48);
+            color: #ffffff;
+        }
+
+        button:hover{
+            background: linear-gradient(180deg, rgba(51,23,186,1) 40%, rgba(121,61,255,1) 100%);            
+        }
+    }
+}
+
+@media only screen and (max-device-width: 480px){
+    body{
+        font-size: 100%;
+    }
+    .container{
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+        height: 100%;
+        flex-direction: column;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        .result{
+            height: 400px;
+            border-top-left-radius:0;
+            border-top-right-radius:0;
+            border-bottom-left-radius:30px;
+            border-bottom-right-radius:30px;
+            padding: 0;
+            width: 100%;
+            h3{
+                padding: 0;
+                font-size: 1.2rem;
+            }
+            .circle{
+                padding: 20px;
+                .number{
+                    font-size: 3rem;
+                }
+                .small-number{
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255,0.5);
+                }
+            }
+            .result-text{
+                width: 300px;
+                padding-bottom: 0px;
+                h2{
+                    font-size: 1.8rem;
+                    padding-bottom: 10px;
+                }
+                p{
+                    line-height: 20px;
+                    font-size: 1rem;
+                }
+            }
+        }
+       
+        .summary{
+            min-height: 55vh;
+            width: 100%;
+            padding: 20px 0;
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            gap: 20px;
+            h2{
+                font-size: 1rem;
+                margin-left: 20px;
+            }
+            .box{
+                margin: 0 20px;
+                padding: 10px;
+            }
+
+            button{
+                width: 80%;
+                margin: 0 auto;
+                border:none;
+                border-radius: 25px;
+                font-size: 1rem;
+                padding: 20px;
+                background-color: rgb(50, 48, 48);
+                color: #ffffff;
+            }
+        }
+    }
+}
